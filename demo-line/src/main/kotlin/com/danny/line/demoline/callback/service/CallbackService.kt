@@ -90,7 +90,7 @@ class CallbackService(
             .build().toString()
     }
 
-    fun getDecodeIdToken(id_token: String): DecodedJWT? {
+    fun getDecodeIdToken(id_token: String): DecodedJWT {
         try {
             val algorithm = Algorithm.HMAC256(lineClientSecret)
             val verifier = JWT.require(algorithm).withIssuer(lineIDTokenIssuer).build()
