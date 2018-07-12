@@ -47,7 +47,7 @@ class CallbackController(
 
         val complete = ModelAndView("complete")
         complete.addObject("accessTokenResponse", accessTokenResponse)
-        // complete.addObject("idTokenJwt", idTokenJwt)
+        complete.addObject("idTokenJwt", idTokenJwt.subject)
 
         return complete
     }
