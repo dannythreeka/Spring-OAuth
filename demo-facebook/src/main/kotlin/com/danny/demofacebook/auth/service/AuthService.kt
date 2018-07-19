@@ -24,7 +24,7 @@ class AuthService(
     private val facebookClientId: String,
     @Value("\${facebook.client.scope}")
     private val facebookClientScope: String,
-    @Value("\${facebook.client.redirect_url}")
+    @Value("\${facebook.client.redirect_uri}")
     private val facebookClientRedirectUrl: String,
     @Value("\${facebook.client.response_type}")
     private val facebookClientResponseType: String){

@@ -17,7 +17,7 @@ facebook:
   client:
     id: YOUR_FACEBOOK_CLIENT_ID
     secret: YOUR_FACEBOOK_CLIENT_SECRET
-    redirect_url: http://localhost:8080/v1/callback
+    redirect_uri: http://localhost:8080/v1/callback
     scope: public_profile
     response_type: code
   login:
@@ -25,7 +25,13 @@ facebook:
     host: www.facebook.com
     port: 443
     path: /v3.0/dialog/oauth
-  graph.api.uri: 
-    scheme: https
-    host: graph.facebook.com
-    port: 443
+  graph-api:
+    uri:
+      scheme: https
+      host: graph.facebook.com
+      port: 443
+    access-token:
+      path: /v3.0/oauth/access_token
+    me:
+      path: /v3.0/me
+      field: id,name,email
