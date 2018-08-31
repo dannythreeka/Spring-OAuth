@@ -1,4 +1,4 @@
-package com.danny.demogoogle.auth.service
+package com.danny.demogoogle.auth
 
 import org.junit.Assert
 import org.junit.Before
@@ -24,11 +24,16 @@ class AuthServiceTest{
     @Before
     fun init(){
         authService = AuthService(
-            AuthServiceTest.GOOGLE_AUTHORIZATION_SCHEME, AuthServiceTest.GOOGLE_AUTHORIZATION_HOST,
-            AuthServiceTest.GOOGLE_AUTHORIZATION_PORT, AuthServiceTest.GOOGLE_AUTHORIZATION_PATH,
-            AuthServiceTest.GOOGLE_AUTHORIZATION_REDIRECT_URL, AuthServiceTest.GOOGLE_AUTHORIZATION_RESPONSE_TYPE,
-            AuthServiceTest.GOOGLE_AUTHORIZATION_SCOPE, AuthServiceTest.GOOGLE_AUTHORIZATION_ACCESS_TYPE,
-            AuthServiceTest.GOOGLE_CLIENT_ID)
+            GOOGLE_AUTHORIZATION_SCHEME,
+            GOOGLE_AUTHORIZATION_HOST,
+            GOOGLE_AUTHORIZATION_PORT,
+            GOOGLE_AUTHORIZATION_PATH,
+            GOOGLE_AUTHORIZATION_REDIRECT_URL,
+            GOOGLE_AUTHORIZATION_RESPONSE_TYPE,
+            GOOGLE_AUTHORIZATION_SCOPE,
+            GOOGLE_AUTHORIZATION_ACCESS_TYPE,
+            GOOGLE_CLIENT_ID
+        )
     }
 
     @Test

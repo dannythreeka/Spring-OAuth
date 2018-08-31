@@ -1,9 +1,15 @@
-package com.danny.demogoogle.auth.service
+package com.danny.demogoogle.auth
 
 import org.springframework.stereotype.Service
 import org.springframework.beans.factory.annotation.Value
 import org.springframework.util.LinkedMultiValueMap
 import org.springframework.web.util.UriComponentsBuilder
+import com.danny.demogoogle.auth.AuthConstant.AUTHORIZATION.KEY_ACCESS_TYPE
+import com.danny.demogoogle.auth.AuthConstant.AUTHORIZATION.KEY_CLIENT_ID
+import com.danny.demogoogle.auth.AuthConstant.AUTHORIZATION.KEY_REDIRECT_URI
+import com.danny.demogoogle.auth.AuthConstant.AUTHORIZATION.KEY_RESPONSE_TYPE
+import com.danny.demogoogle.auth.AuthConstant.AUTHORIZATION.KEY_SCOPE
+import com.danny.demogoogle.auth.AuthConstant.AUTHORIZATION.KEY_STATE
 
 @Service
 class AuthService(
@@ -29,12 +35,12 @@ class AuthService(
     fun getGoogleAuthorizationUri(state: String): String {
 
         val params = LinkedMultiValueMap<String, String>()
-        params.add("client_id", googleClientId)
-        params.add("redirect_uri", googleRedirect)
-        params.add("scope", googleScope)
-        params.add("access_type", googleAccessType)
-        params.add("state", state)
-        params.add("response_type", googleResponseType)
+        params.add(KEY_CLIENT_ID, googleClientId)
+        params.add(KEY_REDIRECT_URI, googleRedirect)
+        params.add(KEY_SCOPE, googleScope)
+        params.add(KEY_ACCESS_TYPE, googleAccessType)
+        params.add(KEY_STATE, state)
+        params.add(KEY_RESPONSE_TYPE, googleResponseType)
 
 
         val uriComponents = UriComponentsBuilder.newInstance()

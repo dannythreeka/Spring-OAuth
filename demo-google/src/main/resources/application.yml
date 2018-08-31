@@ -27,3 +27,10 @@ google:
     redirect: http://localhost:8080/v1/callback
     scope: https://www.googleapis.com/auth/drive.metadata.readonly # Refer: https://developers.google.com/identity/protocols/googlescopes
     access-type: offline
+  token:
+    uri:
+      scheme: https
+      host: www.googleapis.com
+      port: 443
+      path: /oauth2/v4/token
+    grant_type: authorization_code
